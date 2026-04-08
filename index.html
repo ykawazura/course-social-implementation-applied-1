@@ -413,6 +413,28 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
+        教員の紹介
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        演習の概要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
         ベナール対流とは
       
     </span>
@@ -422,7 +444,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_3" class="md-nav__link">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         実験で見るベナール対流
@@ -445,28 +467,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_4" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        内容
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        この講義で体験すること
-      
-    </span>
-  </a>
   
 </li>
       
@@ -658,14 +658,41 @@
 
 
 <h1 id="_1">流体シミュレーション体験講義</h1>
-<p>コンピュータの中に仮想の鍋を作り、底面を加熱したときに流体がどう動くかをシミュレーションします。 </p>
 <hr />
-<h2 id="_2">ベナール対流とは</h2>
+<h2 id="_2">教員の紹介</h2>
+<p>今回の演習を担当する川面です。
+私の専門は、スーパーコンピュータを使った天体プラズマの数値シミュレーションです。</p>
+<figure>
+  <img alt="降着円盤中のプラズマ乱流シミュレーション" src="images/YK2024.jpg" width="80%" />
+<br />
+<figcaption>ブラックホールを取り巻く降着円盤中のプラズマ乱流のシミュレーション（スパコン「富岳」を使用）。<a href="https://doi.org/10.1126/sciadv.adp4965">Kawazura and Kimura (2024)</a> より。</figcaption>
+</figure>
+<hr />
+<h2 id="_3">演習の概要</h2>
+<p>本演習では、物理現象のシミュレーション体験として、鍋の底面を加熱したときに流体がどう動くかを再現します。
+プログラムを一から書く必要はありません。
+用意された Python ノートブックのパラメータを変えて実行するだけで、温度や流れの様子がリアルタイムで可視化されます。
+DS系・経営系を問わず、「動かして→観察して→考える」という探究のサイクルを体験してください。</p>
+<ol>
+<li>イントロダクション：シミュレーションとは？</li>
+<li>流体力学・数値計算の基礎（ミニ講義）</li>
+<li>ハンズオン：Google Colab でシミュレーション実行</li>
+<li>グループ課題：パラメータを変えて比較</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">準備するもの</p>
+<ul>
+<li><strong>Google アカウント</strong>（Google Colab を使用します）</li>
+<li>ノートパソコン</li>
+<li>特別なソフトウェアのインストールは不要です</li>
+</ul>
+</div>
+<hr />
+<h2 id="_4">ベナール対流とは</h2>
 <p><strong>ベナール対流</strong>（Bénard convection）は、下面が加熱・上面が冷却された流体層で発生する組織的な対流です。</p>
 <p>鍋で水を沸かすとき、底から温められた水は軽くなって上昇し、冷えた水が下降します。
-この循環が規則正しい「対流セル（ベナールセル）」を形成します。
-この講義では、その現象をコンピュータで再現します。</p>
-<h3 id="_3">実験で見るベナール対流</h3>
+この循環が規則正しい「対流セル（ベナールセル）」を形成します。</p>
+<h3 id="_5">実験で見るベナール対流</h3>
 <p>鍋底を温めると、温度の低い表面に向かって液体が浮き上がってきます。</p>
 <div style="position:relative;padding-top:56.25%;margin-bottom:1em;">
 <iframe src="https://www.youtube.com/embed/mvN-Y8OQpAs" frameborder="0" allowfullscreen
@@ -683,31 +710,6 @@
 <div style="position:relative;padding-top:56.25%;margin-bottom:1em;">
 <iframe src="https://www.youtube.com/embed/y4EdgAFI2CE" frameborder="0" allowfullscreen
   style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
-</div>
-
-<hr />
-<h2 id="_4">内容</h2>
-<ol>
-<li>イントロダクション：シミュレーションとは？</li>
-<li>流体力学・数値計算の基礎（ミニ講義）</li>
-<li>ハンズオン：Google Colab でシミュレーション実行</li>
-<li>グループ課題：パラメータを変えて比較</li>
-</ol>
-<hr />
-<h2 id="_5">この講義で体験すること</h2>
-<p>この講義では、ベナール対流をコンピュータで再現します。</p>
-<p>プログラムを一から書く必要はありません。
-用意された Python ノートブックのパラメータを変えて実行するだけで、
-温度や流れの様子がリアルタイムで可視化されます。
-DS系・経営系を問わず、「動かして→観察して→考える」という探究のサイクルを体験してください。</p>
-<hr />
-<div class="admonition note">
-<p class="admonition-title">準備するもの</p>
-<ul>
-<li><strong>Google アカウント</strong>（Google Colab を使用します）</li>
-<li>ノートパソコン</li>
-<li>特別なソフトウェアのインストールは不要です</li>
-</ul>
 </div>
 
 
