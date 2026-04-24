@@ -752,8 +752,8 @@
 <h2 id="_2">主要関数の説明</h2>
 <p>ノートブックのセル 3 で定義されている5つの関数を解説します。</p>
 <h3 id="sor_solverpsi-rhs-dx-dy-omega_sor-tol-max_iter"><code>sor_solver(psi, rhs, dx, dy, omega_sor, tol, max_iter)</code></h3>
-<p><strong>役割：</strong> ポアソン方程式 <span class="arithmatex">\(\nabla^2 \psi = \text{rhs}\)</span> を SOR 法（逐次過緩和法）で解く。</p>
-<p>赤黒チェッカーボード順序で格子点を「赤」と「黒」に分け、同色の点を同時に（ベクトル演算で）更新することで、Python の遅いループを回避しています。</p>
+<p>ポアソン方程式 <span class="arithmatex">\(\nabla^2 \psi = \text{rhs}\)</span> を SOR 法（逐次過緩和法）で解きます。
+赤黒チェッカーボード順序で格子点を「赤」と「黒」に分け、同色の点を同時に（ベクトル演算で）更新することで、Python の遅いループを回避しています。</p>
 <p><strong>引数：</strong></p>
 <table>
 <thead>
@@ -792,26 +792,26 @@
 <p><strong>戻り値：</strong> <code>(psi, 使用した反復回数)</code></p>
 <hr />
 <h3 id="compute_velocitypsi-dx-dy-ip1-im1"><code>compute_velocity(psi, dx, dy, ip1, im1)</code></h3>
-<p><strong>役割：</strong> 流れ関数 <span class="arithmatex">\(\psi\)</span> から速度場 <span class="arithmatex">\((u, v)\)</span> を中心差分で計算する。</p>
+<p>流れ関数 <span class="arithmatex">\(\psi\)</span> から速度場 <span class="arithmatex">\((u, v)\)</span> を中心差分で計算します。</p>
 <div class="arithmatex">\[u = \frac{\partial \psi}{\partial y}, \quad v = -\frac{\partial \psi}{\partial x}\]</div>
 <p>壁面（<span class="arithmatex">\(j=0\)</span>, <span class="arithmatex">\(j=N_y\)</span>）では <span class="arithmatex">\(\psi=0\)</span> なので、自動的に非滑り条件 <span class="arithmatex">\(u=v=0\)</span> が満たされます。</p>
-<p><strong>戻り値：</strong> <code>(u, v)</code> — 各形状 <code>Nx × (Ny+1)</code></p>
+<p><strong>戻り値：</strong> <code>(u, v)</code>（各形状 <code>Nx × (Ny+1)</code>）</p>
 <hr />
 <h3 id="compute_wall_vorticitypsi-dy"><code>compute_wall_vorticity(psi, dy)</code></h3>
-<p><strong>役割：</strong> 非滑り壁面での渦度を 2次精度片側公式で評価する。</p>
+<p>非滑り壁面での渦度を 2次精度片側公式で評価します。</p>
 <div class="arithmatex">\[\omega_{\text{壁}} \approx -\frac{2\psi_{\text{壁面隣接点}}}{(\Delta y)^2}\]</div>
 <p>壁面での渦度は境界条件の一部として毎タイムステップ更新されます。</p>
-<p><strong>戻り値：</strong> <code>(omega_bottom, omega_top)</code> — 各形状 <code>(Nx,)</code></p>
+<p><strong>戻り値：</strong> <code>(omega_bottom, omega_top)</code>（各形状 <code>(Nx,)</code>）</p>
 <hr />
 <h3 id="compute_tendencyfield-u-v-dx-dy-diffusivity-ip1-im1"><code>compute_tendency(field, u, v, dx, dy, diffusivity, ip1, im1)</code></h3>
-<p><strong>役割：</strong> スカラー場（温度 <span class="arithmatex">\(T\)</span> または渦度 <span class="arithmatex">\(\omega\)</span>）の時間変化率を計算する。</p>
+<p>スカラー場（温度 <span class="arithmatex">\(T\)</span> または渦度 <span class="arithmatex">\(\omega\)</span>）の時間変化率を計算します。</p>
 <div class="arithmatex">\[\frac{\partial \phi}{\partial t} = -u\frac{\partial \phi}{\partial x} - v\frac{\partial \phi}{\partial y} + D\,\nabla^2 \phi\]</div>
 <p>移流項には<strong>風上差分</strong>（流れの上流方向から値を参照）、拡散項には中心差分を使用。
 壁面行（<span class="arithmatex">\(j=0\)</span>, <span class="arithmatex">\(j=-1\)</span>）の変化率はゼロで返し、呼び出し元でディリクレ条件を再適用します。</p>
-<p><strong>引数 <code>diffusivity</code>：</strong> 温度方程式では <code>1.0</code>、渦度方程式では <code>Pr</code></p>
+<p><strong>引数 <code>diffusivity</code>：</strong> 熱輸送方程式では <code>1.0</code>、渦度方程式では <code>Pr</code></p>
 <hr />
 <h3 id="vorticity_tendencyomega-u-v-t-dx-dy-ra-pr-ip1-im1"><code>vorticity_tendency(omega, u, v, T, dx, dy, Ra, Pr, ip1, im1)</code></h3>
-<p><strong>役割：</strong> 渦度方程式の右辺全体を計算する。</p>
+<p>渦度方程式の右辺全体を計算します。</p>
 <div class="arithmatex">\[\frac{\partial \omega}{\partial t} = \underbrace{\mathrm{Pr}\,\nabla^2\omega - u\frac{\partial \omega}{\partial x} - v\frac{\partial \omega}{\partial y}}_{\text{compute\_tendency による}} + \underbrace{\mathrm{Ra}\,\mathrm{Pr}\,\frac{\partial T}{\partial x}}_{\text{浮力ソース項}}\]</div>
 <p>最後の項「浮力ソース項」は、水平方向の温度勾配が渦度を生成することを表します。
 Ra が大きいほど、この項が卓越して対流が強くなります。</p>

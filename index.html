@@ -424,7 +424,7 @@
   <a href="#_3" class="md-nav__link">
     <span class="md-ellipsis">
       
-        演習の概要
+        シミュレーション研究の流れ
       
     </span>
   </a>
@@ -433,6 +433,17 @@
       
         <li class="md-nav__item">
   <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        演習の概要
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
     <span class="md-ellipsis">
       
         ベナール対流とは
@@ -444,7 +455,7 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#_5" class="md-nav__link">
+  <a href="#_6" class="md-nav__link">
     <span class="md-ellipsis">
       
         実験で見るベナール対流
@@ -668,11 +679,23 @@
 <figcaption>ブラックホールを取り巻く降着円盤中のプラズマ乱流のシミュレーション（スパコン「富岳」を使用）。<a href="https://doi.org/10.1126/sciadv.adp4965">Kawazura and Kimura (2024)</a> より。</figcaption>
 </figure>
 <hr />
-<h2 id="_3">演習の概要</h2>
-<p>本演習では、物理現象のシミュレーション体験として、鍋の底面を加熱したときに流体がどう動くかを再現します。
+<h2 id="_3">シミュレーション研究の流れ</h2>
+<p>シミュレーション研究は、だいたい次の4ステップで進みます。</p>
+<ol>
+<li><strong>現象の観測</strong>：自然や実験で何が起きているかをよく観察・計測する</li>
+<li><strong>方程式によるモデリング</strong>：現象の背後にある物理法則を数式で書き下す</li>
+<li><strong>数値シミュレーションコードの作成</strong>：その方程式を計算機で解けるように離散化し、プログラムを書く</li>
+<li><strong>シミュレーションの実行・解析</strong>：プログラムを動かして結果を可視化し、現象を理解する</li>
+</ol>
+<div class="admonition info">
+<p class="admonition-title">本演習で扱うのは 4. のみです</p>
+<p>このステップ数値<strong>実験</strong>とも言われます。パラメータを変えると結果がどう変わるか、手を動かして観察してみてください。</p>
+</div>
+<hr />
+<h2 id="_4">演習の概要</h2>
+<p>この演習では、鍋の底面を加熱したときに流体がどう動くかを計算機の中で再現します。
 プログラムを一から書く必要はありません。
-用意された Python ノートブックのパラメータを変えて実行するだけで、温度や流れの様子がリアルタイムで可視化されます。
-DS系・経営系を問わず、「動かして→観察して→考える」という探究のサイクルを体験してください。</p>
+こちらで用意した Python ノートブックのパラメータを変えて実行するだけで、温度や流れの様子がリアルタイムで可視化されます。</p>
 <ol>
 <li>イントロダクション：シミュレーションとは？</li>
 <li>流体力学・数値計算の基礎（ミニ講義）</li>
@@ -688,18 +711,18 @@ DS系・経営系を問わず、「動かして→観察して→考える」と
 </ul>
 </div>
 <hr />
-<h2 id="_4">ベナール対流とは</h2>
+<h2 id="_5">ベナール対流とは</h2>
 <p><strong>ベナール対流</strong>（Bénard convection）は、下面が加熱・上面が冷却された流体層で発生する組織的な対流です。</p>
 <p>鍋で水を沸かすとき、底から温められた水は軽くなって上昇し、冷えた水が下降します。
 この循環が規則正しい「対流セル（ベナールセル）」を形成します。</p>
-<h3 id="_5">実験で見るベナール対流</h3>
+<h3 id="_6">実験で見るベナール対流</h3>
 <p>鍋底を温めると、温度の低い表面に向かって液体が浮き上がってきます。</p>
 <div style="position:relative;padding-top:56.25%;margin-bottom:1em;">
 <iframe src="https://www.youtube.com/embed/mvN-Y8OQpAs" frameborder="0" allowfullscreen
   style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
 </div>
 
-<p>温かい流体が上昇し、冷たい流体が下降するサイクルを、着色した水で視覚的に確認できます。</p>
+<p>温かい流体が上昇し、冷たい流体が下降するサイクルが、着色した水ではっきり見えます。</p>
 <div style="position:relative;padding-top:56.25%;margin-bottom:1em;">
 <iframe src="https://www.youtube.com/embed/0mUU69ParFM" frameborder="0" allowfullscreen
   style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>

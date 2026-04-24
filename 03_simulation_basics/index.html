@@ -657,10 +657,9 @@
 <h2 id="_1">差分法のアイデア</h2>
 <p>連続的な方程式をコンピュータで解くには、空間・時間を<strong>離散的な格子</strong>に分割する必要があります。
 「<strong>有限差分法</strong>」は、微分（連続的な変化の割合）を差分（離散的な差の比）で近似する最もシンプルな方法です。</p>
-<div class="arithmatex">\[\frac{df}{dx} \approx \frac{f(x + \Delta x) - f(x)}{\Delta x}\]</div>
+<div class="arithmatex">\[\frac{\mathrm{d}f}{\mathrm{d}x} \approx \frac{f(x + \Delta x) - f(x)}{\Delta x}\]</div>
 <blockquote>
-<p><strong>直感的なイメージ：</strong> 山の坂の傾き（微分）を測るとき、
-少し離れた2点の標高の差を水平距離で割れば近似できる——それが差分です。</p>
+<p>山の坂の傾き（微分）を測るとき、少し離れた2点の標高の差を水平距離で割れば近似できます。これが差分です。</p>
 </blockquote>
 <hr />
 <h2 id="_2">差分の種類</h2>
@@ -741,7 +740,7 @@
 <h2 id="cfl">CFL 条件</h2>
 <p><strong>CFL 条件</strong>（Courant–Friedrichs–Lewy condition）は、数値計算が安定するために必要な時間刻みの制約です。</p>
 <blockquote>
-<p><strong>比喩：</strong> 川の流れより速く「情報」が伝わってはいけない。
+<p>川の流れより速く「情報」が伝わってはいけない、というイメージです。
 1ステップで流体が1格子以上移動してしまうと、計算が破綻（発散）します。</p>
 </blockquote>
 <div class="arithmatex">\[\Delta t &lt; \frac{\Delta x}{\max|u|}\]</div>

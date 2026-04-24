@@ -919,7 +919,7 @@
 <p><strong>パラメータを確認・変更する</strong>（セル 3 の先頭部分）</p>
 </li>
 <li>
-<p>まずデフォルト値のまま実行することを推奨</p>
+<p>まずはデフォルト値のまま実行してみるのがおすすめ</p>
 </li>
 <li>
 <p><strong>セル 3 全体を実行する</strong>（シミュレーション本体）</p>
@@ -976,7 +976,7 @@
 <li>出力に <code>*** 警告: max|ω| ***</code> が表示されていないか確認する</li>
 <li><code>CFL</code> の値が 0.8 を超えていたら <code>dt</code> を半分にする（例：<code>dt = 2.5e-5</code>）</li>
 <li>Ra を非常に大きく（1e6 以上）した場合は <code>dt</code> をさらに小さくする</li>
-<li><strong>注意：</strong> <code>dt</code> を小さくすると1ステップあたりの時間進みが短くなります。シミュレーションが到達する物理時刻は <code>dt × n_steps</code> なので、<code>dt</code> を半分にした場合は <code>n_steps</code> を2倍にしないと同じ時刻まで計算できません。</li>
+<li>気をつけてほしいのは、<code>dt</code> を小さくすると1ステップあたりの時間進みが短くなること。シミュレーションが到達する物理時刻は <code>dt × n_steps</code> なので、<code>dt</code> を半分にしたら <code>n_steps</code> も2倍にしないと同じ時刻まで計算できません。</li>
 </ul>
 <p><strong>SOR 反復数が常に <code>max_iter_sor = 5000</code> になる場合：</strong></p>
 <ul>

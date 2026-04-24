@@ -694,7 +694,7 @@
 
 <h1 id="2">2. 流体力学の基礎</h1>
 <h2 id="_1">流体とは</h2>
-<p><strong>流体</strong>とは、力を加えると形が変わり続けるもの——つまり<strong>気体と液体</strong>の総称です。
+<p><strong>流体</strong>とは、力を加えると形が変わり続けるもの、つまり<strong>気体と液体</strong>の総称です。
 固体は力を加えてもある程度形を保ちますが、流体は容器の形に合わせて変形します。</p>
 <p>空気・水・油・マントル（地球内部の岩石）はすべて流体として扱えます。</p>
 <hr />
@@ -747,17 +747,17 @@
 <hr />
 <h2 id="_5">支配方程式（無次元形）</h2>
 <p>本シミュレーションで解く方程式を示します。
-読めなくて構いません——どんな「量」がどんな「式」で決まるかをざっくり眺めてください。</p>
+読めなくて構いません。どんな「量」がどんな「式」で決まるかをざっくり眺めてください。</p>
 <p><strong>渦度方程式</strong>（流れの回転を記述）：</p>
 <div class="arithmatex">\[\frac{\partial \omega}{\partial t} + u\frac{\partial \omega}{\partial x} + v\frac{\partial \omega}{\partial y} = \mathrm{Pr}\,\nabla^2 \omega + \mathrm{Ra}\,\mathrm{Pr}\,\frac{\partial T}{\partial x}\]</div>
-<p><strong>温度方程式</strong>（熱の移流と拡散を記述）：</p>
+<p><strong>熱輸送方程式</strong>（熱の移流と拡散を記述）：</p>
 <div class="arithmatex">\[\frac{\partial T}{\partial t} + u\frac{\partial T}{\partial x} + v\frac{\partial T}{\partial y} = \nabla^2 T\]</div>
 <p><strong>流れ関数のポアソン方程式</strong>（圧力の代わりに使う補助量 <span class="arithmatex">\(\psi\)</span> を求める）：</p>
 <div class="arithmatex">\[\nabla^2 \psi = -\omega\]</div>
 <p><strong>速度と流れ関数の関係</strong>：</p>
 <div class="arithmatex">\[u = \frac{\partial \psi}{\partial y}, \qquad v = -\frac{\partial \psi}{\partial x}\]</div>
 <blockquote>
-<p><strong>注記：</strong> 式の形は気にせず OK です。重要なのは「Ra と Pr というパラメータが流れの性質を決める」という点です。</p>
+<p>式の形は気にしなくて OK。「Ra と Pr というパラメータが流れの性質を決める」というところだけ押さえてください。</p>
 </blockquote>
 <hr />
 <h2 id="_6">鉛直熱フラックスとヌセルト数</h2>
@@ -780,7 +780,7 @@
 <li><strong>Nu &gt; 1</strong>：対流が内部をかき混ぜ、壁面付近の温度勾配を急峻にする → 熱輸送が増加</li>
 </ul>
 <blockquote>
-<p><strong>直感的なイメージ：</strong> 鍋をかき混ぜると底からの熱が早く全体に伝わる——その「早さ」の比がNu数です。</p>
+<p>鍋をかき混ぜると底からの熱が早く全体に伝わりますよね。その「早さ」の比が Nu 数です。</p>
 </blockquote>
 <hr />
 <div class="admonition warning">
